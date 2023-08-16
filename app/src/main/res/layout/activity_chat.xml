@@ -7,6 +7,15 @@
     android:background="@drawable/chat_back"
     tools:context=".activity.ChatActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/sent_item_layout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/sendImg"
         android:layout_width="wrap_content"
@@ -21,13 +30,14 @@
         app:tint="@color/white" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        app:cardCornerRadius="30dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/sendImg"
         app:layout_constraintStart_toStartOf="parent">
 
         <EditText
